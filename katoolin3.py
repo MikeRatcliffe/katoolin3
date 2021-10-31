@@ -46,7 +46,7 @@ except ImportError:
 # The category names have to be identical to those on
 # https://tools.kali.org/tools-listing !
 PACKAGES = {
-    "01 - Information Gathering" : [
+    "Information Gathering" : [
         "0trace",
         "arping",
         "iputils-arping",
@@ -98,7 +98,7 @@ PACKAGES = {
         "wafw00f",
         "xprobe"
     ],
-    "02 - Vulnerability Analysis" : [
+    "Vulnerability Analysis" : [
         "afl++",
         "bed",
         "cisco-auditing-tool",
@@ -136,7 +136,7 @@ PACKAGES = {
         "voiphopper",
         "yersinia"
     ],
-    "03 - Web Application Analysis" : [
+    "Web Application Analysis" : [
         "apache-users",
         "apache2",
         "beef-xss",
@@ -215,7 +215,7 @@ PACKAGES = {
         "xsser",
         "zaproxy"
     ],
-    "04 - Database Assessment": [
+    "Database Assessment": [
         "jsql-injection",
         "mdbtools",
         "oscanner",
@@ -227,7 +227,7 @@ PACKAGES = {
         "sqlsus",
         "tnscmd10g"
     ],
-    "05 - Password Attacks" : [
+    "Password Attacks" : [
         "cewl",
         "chntpw",
         "cisco-auditing-tool",
@@ -277,7 +277,7 @@ PACKAGES = {
         "twofi",
         "wordlists"
     ],
-    "06 - Wireless Attacks" : [
+    "Wireless Attacks" : [
         "kali-tools-802-11",
         "kali-tools-bluetooth",
         "kali-tools-rfid",
@@ -288,7 +288,7 @@ PACKAGES = {
         "spectools",
         "wireshark"
     ],
-    "07 - Reverse Engineering" : [
+    "Reverse Engineering" : [
         "apktool",
         "bytecode-viewer",
         "clang",
@@ -302,7 +302,7 @@ PACKAGES = {
         "radare2",
         "radare2-cutter"
     ],
-    "08 - Exploitation Tools" : [
+    "Exploitation Tools" : [
         "armitage",
         "backdoor-factory",
         "beef-xss",
@@ -336,7 +336,7 @@ PACKAGES = {
         "webacoo",
         "weevely"
     ],
-    "09 - Sniffing & Spoofing" : [
+    "Sniffing & Spoofing" : [
         "bettercap",
         "darkstat",
         "dnschef",
@@ -361,7 +361,7 @@ PACKAGES = {
         "wireshark",
         "yersinia"
     ],
-    "10 - Post Exploitation": [
+    "Post Exploitation": [
         "backdoor-factory",
         "cymothoa",
         "dbd",
@@ -386,7 +386,7 @@ PACKAGES = {
         "webacoo",
         "weevely"
     ],
-    "11 - Forensics" : [
+    "Forensics" : [
         "afflib-tools",
         "apktool",
         "autopsy",
@@ -487,7 +487,7 @@ PACKAGES = {
         "xplico",
         "yara"
     ],
-    "12 - Reporting Tools" : [
+    "Reporting Tools" : [
         "cutycapt",
         "dradis",
         "eyewitness",
@@ -497,7 +497,7 @@ PACKAGES = {
         "pipal",
         "recordmydesktop"
     ],
-    "13 - Social Engineering Tools": [
+    "Social Engineering Tools": [
         "backdoor-factory",
         "beef-xss",
         "maltego",
