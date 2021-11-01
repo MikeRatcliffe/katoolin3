@@ -1051,15 +1051,25 @@ def install_all_packages():
     sel.add_choice("No", False)
 
     if sel.get_choice():
-        print("Installing all packages")
+        black = Terminal.black
+        green = Terminal.green
 
-        for cat in PACKAGES:
-            print()
-            print(f'Installing all packages in the "{cat}" category')
-            APT.install(packages_by_category(cat))
-            print(f'Installed all packages in the "{cat}"" category')
+        print_heading(f'Installing all packages')
 
-        raise StepBack("Finished installing all packages")
+        # Installing a large amount of packages in one go causes the python apt
+        # library to throw an exception. To avoid this we process packages in
+        # batches grouped by category.
+        try:
+            for cat in PACKAGES:
+                print()
+                print_heading(f'Installing all packages in the "{cat}" category')
+                APT.install(packages_by_category(cat))
+                print_heading(f'Finished installing all packages in the "{cat}" category')
+        except StepBack as s:
+            if s.has_message():
+                print(s)
+
+        raise StepBack(f'{green}Finished installing all packages{black}')
 
 def delete_all_packages():
     sel = Selection("Delete everything?")
@@ -1290,6 +1300,9 @@ Don't update your packages, upgrade your system or
 modify your package cache in any other way while
 katoolin3 is still running!
 {}""".format(Terminal.red, Terminal.reset))
+
+def print_heading(str):
+    print(f'{Terminal.green}{str}{Terminal.black}')
 
 if __name__ == "__main__":
     try:
