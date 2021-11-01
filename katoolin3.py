@@ -1068,6 +1068,7 @@ def install_all_packages():
             except StepBack as s:
                 if s.has_message():
                     print(s)
+                continue
 
         raise StepBack(f'{green}Finished installing all packages{black}')
 
