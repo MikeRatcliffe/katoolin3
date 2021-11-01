@@ -1038,14 +1038,28 @@ def all_packages():
         for pkg in PACKAGES[cat]:
             yield pkg
 
+def packages_by_category(cat):
+    """
+    Return all tools for a specific category
+    """
+    for pkg in PACKAGES[cat]:
+        yield pkg
+
 def install_all_packages():
     sel = Selection("Install everything?")
     sel.add_choice("Yes", True)
     sel.add_choice("No", False)
 
     if sel.get_choice():
-        APT.install(all_packages())
-        raise StepBack("Installed all packages")
+        print("Installing all packages")
+
+        for cat in PACKAGES:
+            print()
+            print(f'Installing all packages in the "{cat}" category')
+            APT.install(packages_by_category(cat))
+            print(f'Installed all packages in the "{cat}"" category')
+
+        raise StepBack("Finished installing all packages")
 
 def delete_all_packages():
     sel = Selection("Delete everything?")
