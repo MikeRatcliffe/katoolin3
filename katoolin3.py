@@ -1059,15 +1059,15 @@ def install_all_packages():
         # Installing a large amount of packages in one go causes the python apt
         # library to throw an exception. To avoid this we process packages in
         # batches grouped by category.
-        try:
-            for cat in PACKAGES:
+        for cat in PACKAGES:
+            try:
                 print()
                 print_heading(f'Installing all packages in the "{cat}" category')
                 APT.install(packages_by_category(cat))
                 print_heading(f'Finished installing all packages in the "{cat}" category')
-        except StepBack as s:
-            if s.has_message():
-                print(s)
+            except StepBack as s:
+                if s.has_message():
+                    print(s)
 
         raise StepBack(f'{green}Finished installing all packages{black}')
 
