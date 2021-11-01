@@ -1303,7 +1303,7 @@ katoolin3 is still running!
 {}""".format(Terminal.red, Terminal.reset))
 
 def print_heading(str):
-    print(f'{Terminal.green}{str}{Terminal.black}')
+    print(f'{Terminal.green}{str}{Terminal.white}')
 
 if __name__ == "__main__":
     try:
