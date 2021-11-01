@@ -49,7 +49,6 @@ PACKAGES = {
     "Information Gathering" : [
         "0trace",
         "arping",
-        "iputils-arping",
         "braa",
         "dmitry",
         "dnsenum",
